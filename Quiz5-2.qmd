@@ -1,0 +1,28 @@
+---
+title: "Quiz5-2"
+author: "HengMa"
+format: pdf
+editor: visual
+---
+
+
+```{r}
+set.seed(1)
+
+n_days <- 100
+matt_pages <- rnorm(n_days, mean=50, sd=10)
+jacki_pages <- rnorm(n_days, mean=40, sd=15)
+mike_pages <- rnorm(n_days, mean=60, sd=20)
+ash_pages <- rnorm(n_days, mean=45, sd=12)
+
+
+rol_mean <- 50
+rol_sd <- 15
+correlation_factor <- 0.5 
+rol_pages <- (ash_pages - mean(ash_pages)) * correlation_factor + rnorm(n_days, mean=rol_mean, sd=rol_sd)
+
+```
+# Explaintion
+
+To simulate this scenario in R, we will generate data for 100 days for each of the five individuals mentioned (Matt, Ash, Jacki, Rol, and Mike). We will ensure that two of them (let's choose Ash and Rol to be the couple) have a positively correlated number of pages read each day. The number of pages read by each individual will be simulated independently, except for Ash and Rol. For simplicity, we will simulate the number of pages read per day as coming from a normal distribution for each person, with random means and standard deviations. Then, we'll add a correlation between Ash and Rol's reading numbers.
+
